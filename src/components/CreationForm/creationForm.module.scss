@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+form {
+    overflow: hidden;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s linear;
+    box-shadow: $shadow;
+    &:hover {
+        box-shadow: $shadow-hover;
+    }
+
+    & > input {
+        flex: 1 0;
+        padding: 10px;
+        border: 2px solid transparent;
+        outline: none;
+        &:focus {
+            border: 2px solid $main-ui;
+            border-radius: 5px;
+        }
+    }
+
+    & > input:focus + button {
+        background-color: hsl(206, 100%, 52%);
+        color: white;
+        &:hover {
+            background-color: hsla(206, 100%, 52%, 0.701);
+            color: white;
+        }
+    }
+
+    & > button {
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+}

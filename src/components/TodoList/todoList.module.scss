@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.todo_list {
+    width: 100%;
+    margin-top: 18px;
+    & > li {
+        box-shadow: $shadow-hover;
+        padding: 5px 0;
+    }
+    & > li:not(last-child) {
+        margin-bottom: 7px;
+    }
+}

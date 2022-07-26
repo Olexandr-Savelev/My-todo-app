@@ -1,0 +1,29 @@
+@mixin container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+@mixin authFormWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-width: 300px;
+}
+
+@mixin buttonMain {
+    border: 1px solid hsl(206, 100%, 52%);
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: hsl(206, 100%, 52%);
+    padding: 7px 10px;
+    line-height: 99%;
+    color: white;
+    text-align: center;
+    cursor:pointer;
+    &:hover {
+        background-color: hsla(206, 100%, 52%, 0.8);
+    }
+}

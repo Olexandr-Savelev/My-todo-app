@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    & > span {
+        color: red;
+        font-size: 1.7rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    & > input {
+        cursor: pointer;
+    }
+}
+
+input:checked + h3 {
+    text-decoration: line-through;
+}

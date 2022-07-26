@@ -1,0 +1,74 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 20px;
+}
+
+.header {
+    border-bottom: 1px solid rgb(220, 220, 220);
+    box-shadow: 0px 0px 15px 0px #7a7a7a;
+    margin-bottom: 20px;
+}
+
+.logo_wrap {
+    display: inline-flex;
+}
+
+.logo {
+    height: 35px;
+    width: 35px;
+    fill: hsl(206, 100%, 52%);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme_btn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+    line-height: 99%;
+    margin-right: 30px;
+    &:hover {
+        filter: drop-shadow(2px 3px 5px #7a7a7a);
+    }
+}
+
+.login {
+    text-decoration: none;
+    color: white;
+    body[theme="Light"] & {
+        color: $text-light-theme;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.logout {
+    body[theme="Light"] & {
+        color: $text-light-theme;
+        border: 1px solid $text-light-theme;
+        &:hover {
+            background-color: #7a7a7a38;
+        }
+    }
+    background: none;
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 7px 10px;
+    &:hover {
+        background: rgba(255, 255, 255, 0.139);
+    }
+}

@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import './App.scss';
+import SingUp from './pages/SignUp/SignUp';
+import LogIn from './pages/LogIn/LogIn'
+import TodoApp from './pages/TodoApp/TodoApp';
+import Layout from './components/Layout/Layout';
+import Home from './pages/Home/Home';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
+import { useEffect } from 'react';
 
-function App() {
+function App(): JSX.Element {
+  const theme = useSelector((state: RootState) => state.theme)
+
+  useEffect(() => {
+    document.body.setAttribute('theme', theme)
+  }, [theme])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/todoapp' element={<TodoApp />} />
+          <Route path='/signup' element={<SingUp />} />
+          <Route path='/login' element={<LogIn />} />
+        </Routes>
+      </Layout>
     </div>
   );
 }

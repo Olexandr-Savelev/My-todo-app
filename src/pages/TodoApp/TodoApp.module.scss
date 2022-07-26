@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.wrapper {
+    width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    position: absolute;
+    height: 100%;
+    box-shadow: $shadow;
+    overflow-y: auto;
+    body[theme="Dark"] & {
+        background-color: #d6d6d6;
+        color: black;
+    }
+
+    & > h3 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+}

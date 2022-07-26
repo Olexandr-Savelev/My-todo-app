@@ -1,0 +1,15 @@
+@import '../../../styles/_mixins';
+
+.button {
+    @include buttonMain;
+}
+
+[class*="large_btn"] {
+    padding: 10px 20px;
+}
+
+[class*="disabled_link"] {
+    pointer-events: none;
+    background-color: hsla(206, 100%, 52%, 0.4);
+    color: rgba(255, 255, 255, 0.5);
+}
