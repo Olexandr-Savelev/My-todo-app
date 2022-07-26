@@ -4,6 +4,9 @@
     width: 100%;
     margin-top: 18px;
     & > li {
+        body[theme="Dark"] & {
+            background-color: $item-dark-bg;
+        }
         box-shadow: $shadow-hover;
         padding: 5px 0;
     }

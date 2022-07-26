@@ -1,19 +1,23 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import { Todo } from '../../../interfaces/todoType'
 import { useAppDispatch } from '../../../store';
 import { removeTodo, toggleComplete } from '../../../store/todosSlice';
 import style from './todoItem.module.scss'
 
-type TodoItem = {
+type ITodoItemProps = {
     todo: Todo
 }
 
-const TodoItem: React.FC<TodoItem> = ({ todo }) => {
+const TodoItem: React.FC<ITodoItemProps> = ({ todo }) => {
 
     const dispatch = useAppDispatch()
 
     return (
-        <div className={style.wrapper}>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className={style.wrapper}>
             <input
                 type="checkbox"
                 checked={todo.completed}
@@ -21,7 +25,7 @@ const TodoItem: React.FC<TodoItem> = ({ todo }) => {
             />
             <h3>{todo.title}</h3>
             <span onClick={() => dispatch(removeTodo(todo.id))}>&times;</span>
-        </div>
+        </motion.div>
     )
 }
 

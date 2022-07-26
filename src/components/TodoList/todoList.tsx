@@ -1,3 +1,4 @@
+import { Reorder } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Todo } from '../../interfaces/todoType'
@@ -19,10 +20,10 @@ export default function TodoList(): JSX.Element {
     if (!visibleTodos) return <></>
 
     return (
-        <ul className={style.todo_list}>
-            {visibleTodos.map((todo: Todo) => <li key={todo.id}>
+        <Reorder.Group axis="y" values={visibleTodos} onReorder={setVisibleTodos} className={style.todo_list}>
+            {visibleTodos.map((todo: Todo) => <Reorder.Item key={todo.id} value={todo}>
                 <TodoItem todo={todo} />
-            </li>)}
-        </ul>
+            </Reorder.Item>)}
+        </Reorder.Group>
     )
 }

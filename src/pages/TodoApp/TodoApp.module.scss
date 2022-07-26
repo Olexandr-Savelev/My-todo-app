@@ -10,7 +10,7 @@
     box-shadow: $shadow;
     overflow-y: auto;
     body[theme="Dark"] & {
-        background-color: #d6d6d6;
+        background-color: $item-dark-bg;
         color: black;
     }
 

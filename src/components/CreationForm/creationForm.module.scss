@@ -26,6 +26,7 @@ form {
     & > input:focus + button {
         background-color: hsl(206, 100%, 52%);
         color: white;
+        cursor: pointer;
         &:hover {
             background-color: hsla(206, 100%, 52%, 0.701);
             color: white;
@@ -35,6 +36,5 @@ form {
     & > button {
         outline: none;
         border: none;
-        cursor: pointer;
     }
 }
