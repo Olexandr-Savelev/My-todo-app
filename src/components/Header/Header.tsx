@@ -6,6 +6,7 @@ import { useAuth } from '../../hooks/useAuth'
 import { RootState } from '../../store'
 import { toggleTheme } from '../../store/themeSlice'
 import { setUser } from '../../store/userSlice'
+import Burger from '../Burger/Burger'
 import Button from '../UI/Button/Button'
 import ThemeIcon from '../UI/ThemeIcon/ThemeIcon'
 import styles from './Header.module.scss'
@@ -57,6 +58,7 @@ const Header: React.FC = () => {
                             <Button path='/signup'>Sign Up</Button>
                         </>}
                 </nav>
+                <Burger />
             </div>
         </header>
     )

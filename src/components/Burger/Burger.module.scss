@@ -1,0 +1,31 @@
+.burger_wrapper {
+    position: relative;
+    height: 20px;
+    width: 35px;
+    cursor: pointer;
+}
+
+.top,
+.center,
+.bottom {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    left: 0;
+    border-radius: 20px;
+}
+
+.top {
+    top: 0;
+}
+
+.center {
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.bottom {
+    bottom: 0;
+}
