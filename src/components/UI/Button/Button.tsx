@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import cn from 'classnames'
 import style from './Button.module.scss'
 
 type IButtonProps = {
@@ -10,18 +11,13 @@ type IButtonProps = {
 }
 
 const Button: React.FC<IButtonProps> = ({ children, path, size = 'default', isDisabled = false }) => {
-    const rootStyles = [style.button]
-
-    if (size === 'large') {
-        rootStyles.push(' large_btn')
-    }
-    if (isDisabled) {
-        rootStyles.push(' disabled_link')
-    }
 
     return (
         <Link
-            className={rootStyles.join('')}
+            className={cn(style.button, {
+                [style.large]: size === 'large',
+                [style.disabled]: isDisabled
+            })}
             to={path}>
             {children}
         </Link>
