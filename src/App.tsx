@@ -10,7 +10,7 @@ import { RootState } from './store';
 import { useEffect } from 'react';
 
 function App(): JSX.Element {
-  const theme = useSelector((state: RootState) => state.theme)
+  const theme = useSelector((state: RootState) => state.ui.theme)
 
   useEffect(() => {
     document.body.setAttribute('theme', theme)

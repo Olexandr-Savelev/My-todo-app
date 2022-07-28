@@ -4,15 +4,15 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/logo-react.svg'
 import { useAuth } from '../../hooks/useAuth'
 import { RootState } from '../../store'
-import { toggleTheme } from '../../store/themeSlice'
+import { toggleTheme } from '../../store/UISlice'
 import { setUser } from '../../store/userSlice'
-import Burger from '../Burger/Burger'
+import Burger from '../UI/Burger/Burger'
 import Button from '../UI/Button/Button'
 import ThemeIcon from '../UI/ThemeIcon/ThemeIcon'
 import styles from './Header.module.scss'
 
 const Header: React.FC = () => {
-    const theme = useSelector((state: RootState) => state.theme)
+    const theme = useSelector((state: RootState) => state.ui.theme)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { isAuth } = useAuth()

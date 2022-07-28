@@ -35,7 +35,7 @@ export default function LogIn() {
     return (
         <div className={styles.wrapper}>
             <h2>Log In</h2>
-            {error === '' ? <></> : <h3>{error}</h3>}
+            {error && <h3>{error}</h3>}
             <AuthForm title='Log In' handleClick={handleLogIn} />
         </div>
     )

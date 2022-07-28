@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import filterSlice from "./filterSlice";
-import themeSlice from "./themeSlice";
+import UISlice from "./UISlice";
 import todosSlice from "./todosSlice";
 import userSlice from "./userSlice";
 
@@ -10,7 +10,7 @@ const store = configureStore({
         todos: todosSlice,
         filter: filterSlice,
         user: userSlice,
-        theme: themeSlice,
+        ui: UISlice,
     }
 })
 

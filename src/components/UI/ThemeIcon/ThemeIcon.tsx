@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../../../store'
 
 const ThemeIcon: React.FC = () => {
-    const theme = useSelector((state: RootState) => state.theme)
+    const theme = useSelector((state: RootState) => state.ui.theme)
 
     return theme === "Light" ? <MoonIcon /> : <SunIcon />
 
