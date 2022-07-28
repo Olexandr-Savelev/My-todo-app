@@ -4,11 +4,11 @@
     @include buttonMain;
 }
 
-[class*="large_btn"] {
+.large {
     padding: 10px 20px;
 }
 
-[class*="disabled_link"] {
+.disabled {
     pointer-events: none;
     background-color: hsla(206, 100%, 52%, 0.4);
     color: rgba(255, 255, 255, 0.5);
