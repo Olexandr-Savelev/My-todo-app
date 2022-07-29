@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface IinitialState {
     theme: "Dark" | "Light",
-    dropDownMenu: "Close" | "Open",
+    isMenuActive: boolean,
 }
 
 
 const initialState: IinitialState = {
     theme: "Dark",
-    dropDownMenu: "Close"
+    isMenuActive: false,
 }
 
 const UISlice = createSlice({
@@ -24,7 +24,7 @@ const UISlice = createSlice({
         toggleMenu: (state) => {
             return {
                 ...state,
-                dropDownMenu: state.dropDownMenu === "Close" ? "Open" : "Close"
+                isMenuActive: !state.isMenuActive
             }
         },
     }

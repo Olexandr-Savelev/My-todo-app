@@ -5,6 +5,7 @@
     height: 20px;
     width: 35px;
     cursor: pointer;
+    z-index: 10;
 }
 
 .top,
@@ -20,10 +21,16 @@
     body[theme="Light"] & {
         background-color: $text-light-theme;
     }
+    transition: all .3s linear;
 }
 
 .top {
     top: 0;
+}
+
+.active .top {
+    transform: rotate(45deg);
+    top: 50%;
 }
 
 .center {
@@ -31,6 +38,15 @@
     top: 50%;
 }
 
+.active .center {
+    opacity: 0;
+}
+
 .bottom {
     bottom: 0;
+}
+
+.active .bottom {
+    transform: rotate(-45deg);
+    top: 50%;
 }

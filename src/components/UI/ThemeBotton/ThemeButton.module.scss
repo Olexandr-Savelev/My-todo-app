@@ -1,0 +1,10 @@
+.theme_btn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+    line-height: 99%;
+    &:hover {
+        filter: drop-shadow(2px 3px 5px #7a7a7a);
+    }
+}
