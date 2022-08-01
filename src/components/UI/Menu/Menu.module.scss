@@ -7,8 +7,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.304);
-    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s linear;
@@ -21,22 +20,36 @@
 }
 
 .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: $light-bg;
+    right: 0;
+    width: 80%;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 15px;
+    padding: 20px;
+    z-index: 3;
+    box-shadow: $shadow-hover;
+    box-sizing: border-box;
+
+    & a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        color: $text-light-theme;
+    }
+
     body[theme="Dark"] & {
         background-color: $dark-bg;
         & a {
             color: $item-dark-bg;
         }
     }
-    background-color: $light-bg;
-    position: absolute;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    top: -100%;
-    gap: 15px;
-    padding: 20px;
-    z-index: 3;
 }
 
 .open {

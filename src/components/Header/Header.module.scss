@@ -26,9 +26,13 @@
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    display: none;
+
+    @media (min-width: 640px) {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 }
 
 .login {

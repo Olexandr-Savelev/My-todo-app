@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 
 .wrapper {
-    width: 600px;
+    width: 90vw;
     padding: 20px;
     box-sizing: border-box;
     transform: translateX(-50%);
@@ -18,5 +18,9 @@
         text-align: center;
         font-size: 24px;
         margin-bottom: 18px;
+    }
+
+    @media (min-width: 640px) {
+        width: 600px;
     }
 }

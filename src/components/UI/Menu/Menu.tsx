@@ -2,14 +2,15 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { RootState } from '../../../store'
-import ThemeButton from '../ThemeBotton/ThemeButton'
 import cn from 'classnames'
 import styles from './Menu.module.scss'
 import { toggleMenu } from '../../../store/UISlice'
+import { useAuth } from '../../../hooks/useAuth'
 
 const Menu: React.FC = () => {
     const menu = useSelector((state: RootState) => state.ui.isMenuActive)
     const dispatch = useDispatch()
+    const { isAuth } = useAuth()
 
     const hideMenu = () => {
         dispatch(toggleMenu())
@@ -23,14 +24,25 @@ const Menu: React.FC = () => {
                 onClick={() => hideMenu()}
             >
             </div>
-            <div className={cn(styles.menu, {
+            <ul className={cn(styles.menu, {
                 [styles.open]: menu,
                 [styles.close]: !menu
-            })}>
-                <Link to='/signup'>Sing Up</Link>
-                <Link to='/login'>Log In</Link>
-                <ThemeButton />
-            </div>
+            })}
+                onClick={() => hideMenu()}
+            >
+                {isAuth ?
+                    <>
+                        <li><Link to='/'>Home page</Link></li>
+                        <li><Link to='/todoapp'>To application</Link></li>
+                        <li><Link to='/todoapp'>Log Out</Link></li>
+                    </> :
+                    <>
+                        <li><Link to='/signup'>Sing Up</Link></li>
+                        <li><Link to='/login'>Log In</Link></li>
+                    </>
+                }
+
+            </ul>
         </>
 
 
