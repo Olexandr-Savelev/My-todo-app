@@ -1,12 +1,11 @@
 @import "../../../styles/variables";
 
 .outer {
-    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.3);
     pointer-events: none;
     opacity: 0;
@@ -22,19 +21,21 @@
 .menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     position: absolute;
-    background-color: $light-bg;
-    right: 0;
-    width: 80%;
-    top: -100%;
-    left: 50%;
-    transform: translateX(-50%);
+    right: -70%;
+    width: 65%;
+    height: 100%;
     gap: 15px;
-    padding: 20px;
+    padding: 40px 20px 20px 30px;
     z-index: 3;
     box-shadow: $shadow-hover;
+    backdrop-filter: blur(5px);
     box-sizing: border-box;
+    transition: right 0.3s ease-in-out;
+
+    @media(min-width:640px){
+        display: none;
+    }
 
     & a {
         display: block;
@@ -45,36 +46,17 @@
     }
 
     body[theme="Dark"] & {
-        background-color: $dark-bg;
+        background-color: rgb(36, 36, 38, 0.3);
         & a {
             color: $item-dark-bg;
         }
     }
+
+    body[theme="Light"] & {
+        background-color: rgba(255, 255, 255, 0.671);
+    }
 }
 
 .open {
-    animation: showMenu 0.5s ease-in-out;
-    top: 50px;
-}
-
-.close {
-    animation: hideMenu 1s ease-in-out;
-}
-
-@keyframes hideMenu {
-    from {
-        top: 50px;
-    }
-    to {
-        top: -100%;
-    }
-}
-
-@keyframes showMenu {
-    from {
-        top: -50px;
-    }
-    to {
-        top: 50px;
-    }
+    right: 0px;
 }

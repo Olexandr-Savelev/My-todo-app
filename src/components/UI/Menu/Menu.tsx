@@ -41,11 +41,8 @@ const Menu: React.FC = () => {
                         <li><Link to='/login'>Log In</Link></li>
                     </>
                 }
-
             </ul>
         </>
-
-
     )
 }
 
