@@ -1,6 +1,6 @@
 import Select, { SingleValue } from 'react-select'
 import { useAppDispatch } from '../../store'
-import { setFilter } from '../../store/filterSlice'
+import { setFilter } from '../../store/slices/filterSlice'
 
 export default function FilterSelect(): JSX.Element {
   const dispatch = useAppDispatch()

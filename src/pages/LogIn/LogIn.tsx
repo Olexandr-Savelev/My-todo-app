@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import AuthForm from '../../components/AuthForm/authForm'
 import { authFunctionProps } from "../../interfaces/authFormProps";
-import { setUser } from "../../store/userSlice";
+import { setUser } from "../../store/slices/userSlice";
 import styles from './LogIn.module.scss'
 
 

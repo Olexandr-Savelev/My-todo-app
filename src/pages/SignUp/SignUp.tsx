@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import AuthForm from '../../components/AuthForm/authForm'
 import { authFunctionProps } from "../../interfaces/authFormProps";
-import { setUser } from "../../store/userSlice";
+import { setUser } from "../../store/slices/userSlice";
 import styles from './SignUp.module.scss'
 
 
@@ -31,18 +31,6 @@ export default function SingUp() {
             console.log(error)
             setError(errorMessage.message)
         }
-        // createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
-        //     const user = userCredential.user
-        //     user.getIdToken().then((token) => {
-        //         dispatch(setUser({
-        //             email: user.email,
-        //             id: user.uid,
-        //             token: token
-        //         }))
-        //     })
-        //     navigate('/todoapp')
-        // }
-        // ).catch((error) => console.log(error))
     }
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../../store'
-import { toggleTheme } from '../../../store/UISlice'
+import { toggleTheme } from '../../../store/slices/UISlice'
 import ThemeIcon from '../ThemeIcon/ThemeIcon'
 import styles from './ThemeButton.module.scss'
 

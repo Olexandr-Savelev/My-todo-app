@@ -1,10 +1,7 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import filterSlice from "./filterSlice";
-import UISlice from "./UISlice";
-import todosSlice from "./todosSlice";
-import userSlice from "./userSlice";
 import storage from "redux-persist/lib/storage";
+import rootReducer from "./reducers/rootReducer";
 import {
     persistReducer,
     persistStore,
@@ -15,13 +12,6 @@ import {
     PURGE,
     REGISTER,
 } from "redux-persist";
-
-const rootReducer = combineReducers({
-    todos: todosSlice,
-    filter: filterSlice,
-    user: userSlice,
-    ui: UISlice,
-})
 
 const persistConfig = {
     key: 'root',

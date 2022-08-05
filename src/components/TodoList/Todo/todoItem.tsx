@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react'
 import { Todo } from '../../../interfaces/todoType'
 import { useAppDispatch } from '../../../store';
-import { removeTodo, toggleComplete } from '../../../store/todosSlice';
+import { removeTodo, toggleComplete } from '../../../store/slices/todosSlice';
 import style from './todoItem.module.scss'
 
 type ITodoItemProps = {

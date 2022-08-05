@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { RootState } from '../../../store'
 import cn from 'classnames'
 import styles from './Menu.module.scss'
-import { toggleMenu } from '../../../store/UISlice'
+import { toggleMenu } from '../../../store/slices/UISlice'
 import { useAuth } from '../../../hooks/useAuth'
 
 const Menu: React.FC = () => {
@@ -26,7 +26,6 @@ const Menu: React.FC = () => {
             </div>
             <ul className={cn(styles.menu, {
                 [styles.open]: menu,
-                [styles.close]: !menu
             })}
                 onClick={() => hideMenu()}
             >
