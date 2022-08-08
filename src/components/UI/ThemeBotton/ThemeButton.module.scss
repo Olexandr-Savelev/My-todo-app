@@ -1,10 +1,36 @@
+@import "../../../styles/variables";
+
 .theme_btn {
+    position: relative;
     display: flex;
     gap: 5px;
     align-items: center;
     cursor: pointer;
     line-height: 99%;
+    padding-right: 15px;
+
     &:hover {
         filter: drop-shadow(2px 3px 5px #7a7a7a);
+    }
+
+    &::after {
+        @media (min-width: 640px) {
+            position: absolute;
+            content: "";
+            right: 0;
+            height: 100%;
+            width: 1px;
+            background-color: $text-dark-theme;
+            body[theme="Light"] & {
+                background-color: $text-light-theme;
+            }
+        }
+    }
+
+    &__text {
+        display: none;
+        @media (min-width: 640px) {
+            display: block;
+        }
     }
 }

@@ -43,7 +43,10 @@ const Header: React.FC = () => {
                             <Button path='/signup'>Sign Up</Button>
                         </>}
                 </nav>
-                <Burger />
+                <div className={styles.mobile_nav}>
+                    <ThemeButton />
+                    <Burger />
+                </div>
             </div>
         </header>
     )

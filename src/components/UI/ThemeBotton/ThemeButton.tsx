@@ -17,11 +17,13 @@ const ThemeButton: React.FC = () => {
         <span
             className={styles.theme_btn}
             onClick={() => themeHandler()}>
-            <ThemeIcon />
-            {theme === "Light" ?
-                "Dark " :
-                "Light "}
-            Mode
+            <ThemeIcon /> 
+            <span className={styles.theme_btn__text}>
+                {theme === "Light" ?
+                    "Dark " :
+                    "Light "}
+                Mode
+            </span>          
         </span>
     )
 }
