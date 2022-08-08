@@ -14,17 +14,21 @@ const ThemeButton: React.FC = () => {
         dispatch(toggleTheme())
     }
     return (
-        <span
-            className={styles.theme_btn}
-            onClick={() => themeHandler()}>
-            <ThemeIcon /> 
-            <span className={styles.theme_btn__text}>
-                {theme === "Light" ?
-                    "Dark " :
-                    "Light "}
-                Mode
-            </span>          
-        </span>
+        <>
+            <span
+                className={styles.theme_btn}
+                onClick={() => themeHandler()}>
+                <ThemeIcon />
+                <span className={styles.theme_btn__text}>
+                    {theme === "Light" ?
+                        "Dark " :
+                        "Light "}
+                    Mode
+                </span>
+            </span>
+            <span className={styles.line}></span>
+        </>
+
     )
 }
 
