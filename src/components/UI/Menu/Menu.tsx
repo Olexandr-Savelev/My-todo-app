@@ -6,6 +6,7 @@ import cn from 'classnames'
 import styles from './Menu.module.scss'
 import { toggleMenu } from '../../../store/slices/UISlice'
 import { useAuth } from '../../../hooks/useAuth'
+import { removeUser } from '../../../store/slices/userSlice'
 
 const Menu: React.FC = () => {
     const menu = useSelector((state: RootState) => state.ui.isMenuActive)
@@ -33,7 +34,9 @@ const Menu: React.FC = () => {
                     <>
                         <li><Link to='/'>Home page</Link></li>
                         <li><Link to='/todoapp'>To application</Link></li>
-                        <li><Link to='/todoapp'>Log Out</Link></li>
+                        <li><span
+                            onClick={() => dispatch(removeUser())}
+                        >Log Out</span></li>
                     </> :
                     <>
                         <li><Link to='/signup'>Sing Up</Link></li>

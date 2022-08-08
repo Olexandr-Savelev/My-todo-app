@@ -45,6 +45,12 @@
         color: $text-light-theme;
     }
 
+    & span {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
     body[theme="Dark"] & {
         background-color: rgb(36, 36, 38, 0.3);
         & a {
