@@ -28,20 +28,18 @@ const Menu: React.FC = () => {
             </div>
             <ul className={cn(styles.menu, {
                 [styles.open]: menu,
-            })}
-                onClick={() => hideMenu()}
-            >
+            })}>
                 {isAuth ?
                     <>
-                        <li><Link to='/'>Home page</Link></li>
-                        <li><Link to='/todoapp'>To application</Link></li>
+                        <li onClick={() => hideMenu()}><Link to='/'>Home page</Link></li>
+                        <li onClick={() => hideMenu()}><Link to='/todoapp'>To application</Link></li>
                         <li><span
                             onClick={() => { dispatch(removeUser()); navigate('/') }}
                         >Log Out</span></li>
                     </> :
                     <>
-                        <li><Link to='/signup'>Sing Up</Link></li>
-                        <li><Link to='/login'>Log In</Link></li>
+                        <li onClick={() => hideMenu()}><Link to='/signup'>Sing Up</Link></li>
+                        <li onClick={() => hideMenu()}><Link to='/login'>Log In</Link></li>
                     </>
                 }
             </ul>

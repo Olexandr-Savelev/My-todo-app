@@ -8,6 +8,7 @@ import Home from './pages/Home/Home';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
 import { useEffect } from 'react';
+import Page404 from './pages/Page404/Page404';
 
 function App(): JSX.Element {
   const theme = useSelector((state: RootState) => state.ui.theme)
@@ -24,6 +25,7 @@ function App(): JSX.Element {
           <Route path='/todoapp' element={<TodoApp />} />
           <Route path='/signup' element={<SingUp />} />
           <Route path='/login' element={<LogIn />} />
+          <Route path='*' element={<Page404 />} />
         </Routes>
       </Layout>
     </div>
