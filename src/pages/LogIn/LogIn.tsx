@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import AuthForm from '../../components/AuthForm/authForm'
 import { authFunctionProps } from "../../interfaces/authFormProps";
-import { setUser } from "../../store/userSlice";
+import { setUser } from "../../store/slices/userSlice";
 import styles from './LogIn.module.scss'
 
 
@@ -35,7 +35,7 @@ export default function LogIn() {
     return (
         <div className={styles.wrapper}>
             <h2>Log In</h2>
-            {error === '' ? <></> : <h3>{error}</h3>}
+            {error && <h3>{error}</h3>}
             <AuthForm title='Log In' handleClick={handleLogIn} />
         </div>
     )

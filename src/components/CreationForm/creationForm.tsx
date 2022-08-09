@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react'
 import { useAppDispatch } from '../../store';
-import { addTodo } from '../../store/todosSlice';
+import { addTodo } from '../../store/slices/todosSlice';
 import styles from './creationForm.module.scss'
 
 const CreationForm = (): JSX.Element => {

@@ -10,8 +10,8 @@
 }
 
 .header {
-    border-bottom: 1px solid rgb(220, 220, 220);
-    box-shadow: 0px 0px 15px 0px #7a7a7a;
+    border-bottom: 1px solid $border-ui;
+    box-shadow: $shadow;
     margin-bottom: 20px;
 }
 
@@ -26,20 +26,12 @@
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+    display: none;
 
-.theme_btn {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    cursor: pointer;
-    line-height: 99%;
-    margin-right: 30px;
-    &:hover {
-        filter: drop-shadow(2px 3px 5px #7a7a7a);
+    @media (min-width: 640px) {
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
 }
 
@@ -70,5 +62,14 @@
     padding: 7px 10px;
     &:hover {
         background: rgba(255, 255, 255, 0.139);
+    }
+}
+
+.mobile_nav {
+    display: flex;
+    gap: 15px;
+
+    @media (min-width: 640px) {
+        display: none;
     }
 }

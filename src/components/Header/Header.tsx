@@ -1,18 +1,15 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/logo-react.svg'
 import { useAuth } from '../../hooks/useAuth'
-import { RootState } from '../../store'
-import { toggleTheme } from '../../store/themeSlice'
-import { setUser } from '../../store/userSlice'
-import Burger from '../Burger/Burger'
+import { setUser } from '../../store/slices/userSlice'
+import Burger from '../UI/Burger/Burger'
 import Button from '../UI/Button/Button'
-import ThemeIcon from '../UI/ThemeIcon/ThemeIcon'
+import ThemeButton from '../UI/ThemeBotton/ThemeButton'
 import styles from './Header.module.scss'
 
 const Header: React.FC = () => {
-    const theme = useSelector((state: RootState) => state.theme)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { isAuth } = useAuth()
@@ -26,10 +23,6 @@ const Header: React.FC = () => {
         navigate('/')
     }
 
-    const themeHandler = () => {
-        dispatch(toggleTheme())
-    }
-
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -37,15 +30,7 @@ const Header: React.FC = () => {
                     <Logo className={styles.logo} />
                 </Link>
                 <nav className={styles.nav}>
-                    <span
-                        className={styles.theme_btn}
-                        onClick={() => themeHandler()}>
-                        <ThemeIcon />
-                        {theme === "Light" ?
-                            "Dark " :
-                            "Light "}
-                        Mode
-                    </span>
+                    <ThemeButton />
                     {isAuth ?
                         <button className={styles.logout}
                             onClick={logOutHandler}
@@ -58,7 +43,10 @@ const Header: React.FC = () => {
                             <Button path='/signup'>Sign Up</Button>
                         </>}
                 </nav>
-                <Burger />
+                <div className={styles.mobile_nav}>
+                    <ThemeButton />
+                    <Burger />
+                </div>
             </div>
         </header>
     )
