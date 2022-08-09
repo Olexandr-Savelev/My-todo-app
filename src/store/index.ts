@@ -13,6 +13,7 @@ import {
     REGISTER,
 } from "redux-persist";
 
+
 const persistConfig = {
     key: 'root',
     storage,
@@ -34,6 +35,7 @@ const store = configureStore({
 
     devTools: process.env.NODE_ENV !== 'production',
 })
+
 
 
 export type RootState = ReturnType<typeof rootReducer>

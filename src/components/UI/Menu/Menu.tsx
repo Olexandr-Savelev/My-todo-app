@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { RootState } from '../../../store'
 import cn from 'classnames'
 import styles from './Menu.module.scss'
@@ -11,6 +11,7 @@ import { removeUser } from '../../../store/slices/userSlice'
 const Menu: React.FC = () => {
     const menu = useSelector((state: RootState) => state.ui.isMenuActive)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const { isAuth } = useAuth()
 
     const hideMenu = () => {
@@ -35,7 +36,7 @@ const Menu: React.FC = () => {
                         <li><Link to='/'>Home page</Link></li>
                         <li><Link to='/todoapp'>To application</Link></li>
                         <li><span
-                            onClick={() => dispatch(removeUser())}
+                            onClick={() => { dispatch(removeUser()); navigate('/') }}
                         >Log Out</span></li>
                     </> :
                     <>
