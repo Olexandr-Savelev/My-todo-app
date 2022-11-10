@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react'
 import { Todo } from '../../../interfaces/todoType'
 import { useAppDispatch } from '../../../store';
-import { removeTodo, renameTodo, toggleComplete } from '../../../store/slices/todosSlice';
-import { ReactComponent as Pen } from '../../../assets/icons/pen.svg'
-import { ReactComponent as Cross } from '../../../assets/icons/cross.svg'
-import { ReactComponent as CheckMark } from '../../../assets/icons/check-mark.svg'
-import style from './todoItem.module.scss'
-import Checkbox from "../../UI/Checkbox/Checkbox"
+import { removeTodo, renameTodo } from "../../../store/slices/todosSlice"
+import { ReactComponent as Pen } from "../../../assets/icons/pen.svg"
+import { ReactComponent as Cross } from "../../../assets/icons/cross.svg"
+import { ReactComponent as CheckMark } from "../../../assets/icons/check-mark.svg"
+import style from "./todoItem.module.scss"
+import Checkbox from "../../UI/Checkbox/CheckBox"
 import cn from "classnames"
 
 type ITodoItemProps = {
