@@ -32,6 +32,7 @@
     }
 }
 
-input:checked + h3 {
-    text-decoration: line-through;
-}
+.done {
+        text-decoration: line-through;
+    }
+
