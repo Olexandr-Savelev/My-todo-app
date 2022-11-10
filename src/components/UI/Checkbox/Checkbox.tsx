@@ -1,5 +1,5 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../../../store"
 import { toggleComplete } from "../../../store/slices/todosSlice"
 import styles from "./Checkbox.module.scss"
 
@@ -9,7 +9,7 @@ interface CheckboxProps {
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({ checked, id }) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   return (
     <label
       className={styles.container}
