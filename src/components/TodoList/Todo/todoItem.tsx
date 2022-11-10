@@ -7,7 +7,7 @@ import { ReactComponent as Pen } from "../../../assets/icons/pen.svg"
 import { ReactComponent as Cross } from "../../../assets/icons/cross.svg"
 import { ReactComponent as CheckMark } from "../../../assets/icons/check-mark.svg"
 import style from "./todoItem.module.scss"
-import Checkbox from "../../UI/Checkbox/CheckBox"
+import Checkbox from "../../UI/Checkbox/Checkbox"
 import cn from "classnames"
 
 type ITodoItemProps = {
@@ -34,11 +34,6 @@ const TodoItem: React.FC<ITodoItemProps> = ({ todo }) => {
       animate={{ opacity: 1 }}
       className={style.todo}
     >
-      {/* <input
-        type="checkbox"
-        checked={todo.completed}
-        onChange={() => dispatch(toggleComplete(todo.id))}
-      /> */}
       <Checkbox checked={todo.completed} id={todo.id} />
       {isEditable ? (
         <input
